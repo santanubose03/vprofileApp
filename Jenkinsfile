@@ -104,25 +104,25 @@ pipeline{
 
         }
 
-        stage('Publish Artifact'){
-           steps{
-               nexusArtifactUploader(
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    nexusUrl: "54.234.122.250:8081",
-                    groupId: 'vprofile',
-                    version: "${env.BUILD_NUMBER}-${env.BUILD_TIMESTAMP}",
-                    repository: 'vprofile-app-maven',
-                    credentialsId: 'NEXUS_LOGIN',
-                    artifacts: [
-                        [artifactId: 'vproapp',
-                         classifier: '',
-                         file: 'target/vprofile-v2.war',
-                         type: 'war']
-                    ]
-                 )
-           }
-        } 
+        // stage('Publish Artifact'){
+        //    steps{
+        //        nexusArtifactUploader(
+        //             nexusVersion: 'nexus3',
+        //             protocol: 'http',
+        //             nexusUrl: "54.234.122.250:8081",
+        //             groupId: 'vprofile',
+        //             version: "${env.BUILD_NUMBER}-${env.BUILD_TIMESTAMP}",
+        //             repository: 'vprofile-app-maven',
+        //             credentialsId: 'NEXUS_LOGIN',
+        //             artifacts: [
+        //                 [artifactId: 'vproapp',
+        //                  classifier: '',
+        //                  file: 'target/vprofile-v2.war',
+        //                  type: 'war']
+        //             ]
+        //          )
+        //    }
+        // } 
 
         stage('Build Docker Image'){
             steps{
