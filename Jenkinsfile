@@ -18,7 +18,7 @@ pipeline{
         vprofileRegistry = "https://180294204145.dkr.ecr.us-east-1.amazonaws.com"
         imageName = "180294204145.dkr.ecr.us-east-1.amazonaws.com/vprofileappimg"
         clusterName = 'vprofile'
-        serviceName = 'vprofileappsrv'
+        serviceName = 'vprofile-app-srv'
     }
 
    
